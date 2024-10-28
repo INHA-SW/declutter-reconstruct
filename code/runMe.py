@@ -166,7 +166,7 @@ def start_main(action, parameters_object, paths):
     # get current time
     running_time = str(datetime.datetime.now())[:-7].replace(' ', '@')
     # windows
-    # running_time = running_time.replace(':', '_')
+    running_time = running_time.replace(':', '_')
     # ----------------------------------------------------------------
     if action == 'batch':
         # ----------------------------------------------------------------

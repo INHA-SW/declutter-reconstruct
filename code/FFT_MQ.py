@@ -4,9 +4,7 @@ import numpy as np
 from skimage import io
 from skimage.util import img_as_ubyte
 
-from fft_structure_extraction import FFTStructureExtraction as structure_extraction
-
-import fft_structure_extraction
+from rose_v1_repo.fft_structure_extraction import FFTStructureExtraction as structure_extraction, save_simple_map
 
 
 def main(path_to_image, path_to_folder, filter_level, par):
@@ -17,7 +15,7 @@ def main(path_to_image, path_to_folder, filter_level, par):
     rose.process_map()
 
     rose.simple_filter_map(filter_level)
-    fft_structure_extraction.save_simple_map(path_to_folder + "_" + str(filter_level) + ".png", rose.analysed_map, rose.shape)
+    save_simple_map(path_to_folder + "_" + str(filter_level) + ".png", rose.analysed_map, rose.shape)
     # rose.simple_filter_map(filter_level)
 
     # rose.histogram_filtering()
